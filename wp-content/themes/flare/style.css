@@ -6,6 +6,45 @@ Version: 1.8
 
 */
 
+/* Local font-face declarations */
+@font-face {
+    font-family: 'ABC Monument Grotesk';
+    src: url('assets/fonts/ABCMonumentGrotesk-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'ABC Monument Grotesk';
+    src: url('assets/fonts/ABCMonumentGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select,
+optgroup,
+option,
+label,
+a,
+p,
+span,
+div,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+li {
+    font-family: 'ABC Monument Grotesk', sans-serif;
+}
+
 *,
 .slick-slider,
 :after,
@@ -30,7 +69,7 @@ a.right:after {
 .s0,
 .s01,
 body {
-    font-family: "ABC Monument Grotesk Regular";
+    font-family: 'ABC Monument Grotesk', sans-serif;
 }
 
 .noselect,
@@ -454,22 +493,6 @@ a.right:hover:after {
     }
 }
 
-@font-face {
-    font-family: "ABC Monument Grotesk Medium";
-    font-style: normal;
-    font-weight: 400;
-    src: url(assets/fonts/ABCMonumentGrotesk-Medium.html);
-    src: url(assets/fonts/ABCMonumentGrotesk-Medium-2.html) format("embedded-opentype"), url(assets/fonts/ABCMonumentGrotesk-Medium.woff) format("woff"), url(assets/fonts/ABCMonumentGrotesk-Medium-3.html) format("woff2"), url(assets/fonts/ABCMonumentGrotesk-Medium-4.html) format("truetype"), url(assets/fonts/ABCMonumentGrotesk-Medium-5.html) format("svg");
-}
-
-@font-face {
-    font-family: "ABC Monument Grotesk Regular";
-    font-style: normal;
-    font-weight: 400;
-    src: url(assets/fonts/ABCMonumentGrotesk-Regular.html);
-    src: url(assets/fonts/ABCMonumentGrotesk-Regular.html) format("embedded-opentype"), url(assets/fonts/ABCMonumentGrotesk-Regular.woff) format("woff"), url(assets/fonts/ABCMonumentGrotesk-Regular-2.html) format("woff2"), url(assets/fonts/ABCMonumentGrotesk-Regular-3.html) format("truetype"), url(assets/fonts/ABCMonumentGrotesk-Regular-4.html) format("svg");
-}
-
 body {
     color: #242425;
 }
@@ -511,18 +534,19 @@ footer.light .wrapper .col.nav * {
 h1 {
     font-size: 40px;
     line-height: 45px;
-    font-family: "ABC Monument Grotesk Medium";
+    font-family: 'ABC Monument Grotesk';
     letter-spacing: -0.5px;
 }
 
 .s1.light {
-    font-family: "ABC Monument Grotesk Regular" !important;
+    font-family: 'ABC Monument Grotesk' !important;
 }
 
 .s1-5 {
     font-size: 36px;
     line-height: 41px;
-    font-family: "ABC Monument Grotesk Medium";
+    font-family: 'ABC Monument Grotesk';
+    font-weight: 500;
     letter-spacing: -0.5px;
 }
 
@@ -530,7 +554,7 @@ h1 {
 h2 {
     font-size: 32px;
     line-height: 36px;
-    font-family: "ABC Monument Grotesk Regular";
+    font-family: 'ABC Monument Grotesk';
     letter-spacing: -0.5px;
 }
 
@@ -538,7 +562,7 @@ h2 {
 h3 {
     font-size: 30px;
     line-height: 33px;
-    font-family: "ABC Monument Grotesk Regular";
+    font-family: 'ABC Monument Grotesk';
 }
 
 .s4,
@@ -546,7 +570,8 @@ h3 {
 h4 {
     font-size: 25px;
     line-height: 30px;
-    font-family: "ABC Monument Grotesk Regular";
+    font-family: 'ABC Monument Grotesk';
+    font-weight: 400;
 }
 
 .contact-wrapper form fieldset legend,
@@ -556,7 +581,8 @@ h4 {
 h5 {
     font-size: 22px;
     line-height: 27px;
-    font-family: "ABC Monument Grotesk Regular";
+    font-family: 'ABC Monument Grotesk';
+    font-weight: 400;
 }
 
 .blog .s5,
@@ -575,12 +601,14 @@ body .cky-consent-bar .cky-notice *,
 p {
     font-size: 16px;
     line-height: 22px;
-    font-family: "ABC Monument Grotesk Regular";
+    font-family: 'ABC Monument Grotesk';
+    font-weight: 400;
 }
 
 .builder-banner h1,
 .builder-banner h2 {
-    font-family: "ABC Monument Grotesk Regular";
+    font-family: 'ABC Monument Grotesk';
+    font-weight: 400;
 }
 
 .sml,
@@ -622,13 +650,15 @@ figcaption {
 .flare-news .wrapper .featured-post .meta .excerpt,
 b,
 strong {
-    font-family: "ABC Monument Grotesk Medium" !important;
+    font-family: 'ABC Monument Grotesk' !important;
+    font-weight: 500 !important;
 }
 
 .builder-icon-boxes.get-started .box-wrapper .box .title,
 .builder-tabs-accordions .accordions .accordion .content strong,
 .regular {
-    font-family: "ABC Monument Grotesk Regular" !important;
+    font-family: 'ABC Monument Grotesk' !important;
+    font-weight: 400 !important;
 }
 
 h1,
