@@ -1,4 +1,9 @@
 {
   "buildCommand": "echo 'No build step needed'",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/wallet", "destination": "/wallet.html" },
+    { "source": "/rdr", "destination": "/rdr.html" },
+    { "source": "/", "destination": "/index.html" }
+  ]
 }
