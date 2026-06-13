@@ -55,10 +55,19 @@ module.exports = async function (req, res) {
   const to = process.env.MAIL_TO || user;
   const from = process.env.MAIL_FROM || `noreply@${req.headers.host || 'example.com'}`;
 
+  console.log('SMTP Config Debug:', {
+    host,
+    port,
+    user: user ? '***set***' : 'NOT_SET',
+    pass: pass ? '***set***' : 'NOT_SET',
+    to,
+    from,
+  });
+
   if (!user || !pass) {
     res.statusCode = 500;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ error: 'SMTP credentials not configured on the server.' }));
+    res.end(JSON.stringify({ error: 'SMTP credentials not configured on the server. SMTP_USER or SMTP_PASS is missing.' }));
     return;
   }
 
