@@ -48,12 +48,32 @@ module.exports = async function (req, res) {
     return;
   }
 
-  const host = process.env.SMTP_HOST || 'smtp.gmail.com';
-  const port = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const to = process.env.MAIL_TO || user;
-  const from = process.env.MAIL_FROM || `noreply@${req.headers.host || 'example.com'}`;
+  const host =
+    process.env.SMTP_HOST?.trim() ||
+    process.env.smtp_host?.trim() ||
+    'smtp.gmail.com';
+  const port = parseInt(
+    process.env.SMTP_PORT?.trim() ||
+      process.env.smtp_port?.trim() ||
+      '587',
+    10,
+  );
+  const user =
+    process.env.SMTP_USER?.trim() ||
+    process.env.smtp_user?.trim() ||
+    process.env.SMTP_USER_NAME?.trim();
+  const pass =
+    process.env.SMTP_PASS?.trim() ||
+    process.env.smtp_pass?.trim() ||
+    process.env.SMTP_PASSWORD?.trim();
+  const to =
+    process.env.MAIL_TO?.trim() ||
+    process.env.mail_to?.trim() ||
+    user;
+  const from =
+    process.env.MAIL_FROM?.trim() ||
+    process.env.mail_from?.trim() ||
+    `noreply@${req.headers.host || 'example.com'}`;
 
   console.log('SMTP Config Debug:', {
     host,
@@ -64,10 +84,17 @@ module.exports = async function (req, res) {
     from,
   });
 
-  if (!user || !pass) {
+  const missingVars = [];
+  if (!user) missingVars.push('SMTP_USER');
+  if (!pass) missingVars.push('SMTP_PASS');
+  if (missingVars.length) {
     res.statusCode = 500;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ error: 'SMTP credentials not configured on the server. SMTP_USER or SMTP_PASS is missing.' }));
+    res.end(
+      JSON.stringify({
+        error: `SMTP credentials not configured on the server. Missing: ${missingVars.join(', ')}.`,
+      }),
+    );
     return;
   }
 

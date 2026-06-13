@@ -1,12 +1,4 @@
 {
   "buildCommand": "echo 'No build step needed'",
-  "outputDirectory": ".",
-  "env": {
-    "SMTP_HOST": "@smtp_host",
-    "SMTP_PORT": "@smtp_port",
-    "SMTP_USER": "@smtp_user",
-    "SMTP_PASS": "@smtp_pass",
-    "MAIL_TO": "@mail_to",
-    "MAIL_FROM": "@mail_from"
-  }
+  "outputDirectory": "."
 }
