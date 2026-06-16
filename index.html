@@ -169,6 +169,268 @@
     <script id="cookieyes" type="text/javascript" src="cdn-cookieyes.com/client_data/dedcd40fe7e8316d7512b294/script.html"></script>
     <link rel='dns-prefetch' href='index-2.html' />
     <link rel='stylesheet' id='wp-block-library-css' href='wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+    <style>
+      .cy-dashboard-root {
+        background: #ffffff;
+        color: #111827;
+        padding: 1rem 0.75rem 1.5rem;
+        max-width: 980px;
+        margin: 0 auto 0;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      section.builder-hero {
+        margin: 0;
+        padding: 0;
+      }
+
+      .cy-dashboard-inner {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .cy-card {
+        background: #ffffff;
+        border-radius: 1rem;
+        border: 1px solid #e5e7eb;
+      }
+
+      .cy-toggle-card {
+        padding: 0.95rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .cy-toggle-left {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-width: 0;
+      }
+
+      .cy-toggle-switch {
+        appearance: none;
+        border: none;
+        width: 3.25rem;
+        height: 1.8rem;
+        border-radius: 9999px;
+        background: #ec4899;
+        position: relative;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .cy-toggle-knob {
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 9999px;
+        background: #ffffff;
+        position: absolute;
+        top: 0.25rem;
+        left: 0.25rem;
+        transition: transform 0.2s ease;
+        transform: translateX(1.35rem);
+      }
+
+      .cy-card-title {
+        margin: 0;
+        font-weight: 600;
+        color: #111827;
+      }
+
+      .cy-card-text {
+        margin: 0.25rem 0 0;
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      .cy-card-icon svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        color: #9ca3af;
+        display: block;
+      }
+
+      .cy-stats-card {
+        padding: 0.95rem;
+      }
+
+      .cy-stats-grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .cy-stat-cell {
+        border-radius: 1rem;
+        background: #ffffff;
+        padding: 0.85rem;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+      }
+
+      .cy-stat-header {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #6b7280;
+      }
+
+      .cy-stat-header svg {
+        width: 1rem;
+        height: 1rem;
+        color: #6b7280;
+      }
+
+      .cy-stat-value {
+        margin: 0.75rem 0 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .cy-stat-subvalue {
+        margin: 0.25rem 0 0;
+        font-size: 0.8125rem;
+        color: #6b7280;
+      }
+
+      .cy-link-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: space-between;
+      }
+
+      .cy-link-row a {
+        color: #6b7280;
+        font-size: 0.875rem;
+        text-decoration: underline;
+      }
+
+      .cy-withdraw-card {
+        padding: 0.95rem;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+      }
+
+      .cy-card-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .cy-card-header-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #111827;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+      .cy-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background: #fee2e2;
+        color: #991b1b;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .cy-balance-label {
+        margin: 1rem 0 0;
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #6b7280;
+      }
+
+      .cy-balance-value {
+        margin: 0.5rem 0 0;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .cy-withdraw-button {
+        width: 100%;
+        margin-top: 0.85rem;
+        padding: 0.85rem 1rem;
+        border-radius: 1rem;
+        border: none;
+        background: #f3f4f6;
+        color: #9ca3af;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: not-allowed;
+      }
+
+      .cy-footer-text {
+        margin-top: 0.85rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      .cy-action-bar {
+        border-top: 1px solid #e5e7eb;
+        background: #ffffff;
+        padding: 0.85rem 0 0;
+      }
+
+      .cy-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .cy-action-row button {
+        flex: 1 1 0;
+        min-width: 0;
+        border-radius: 1rem;
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+      }
+
+      .cy-action-withdraw {
+        background: #f3f4f6;
+        color: #9ca3af;
+        cursor: not-allowed;
+      }
+
+      .cy-action-deposit {
+        background: #ec4899;
+        color: #ffffff;
+      }
+
+      @media (min-width: 640px) {
+        .cy-stats-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .cy-link-row {
+          justify-content: space-between;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .cy-stats-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    </style>
     <style id='safe-svg-svg-icon-style-inline-css' type='text/css'>
         .safe-svg-cover .safe-svg-inside {
             display: inline-block;
@@ -941,7 +1203,7 @@
 														class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6084 ">
 														<a href="/wallet" id="KByClzueDK ">Request for proposals:
 															Multi asset liquid staking &#038; restaking leveraging
-															Flare’s data and interoperability protocols</a>
+															Flare?s data and interoperability protocols</a>
 													</li>
 													<li id="menu-item-5389 "
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5389 ">
@@ -1029,38 +1291,107 @@
 				<main id="main " class="site-main " role="main ">
 
 
-					<section class="builder-hero ">
-						<div class="outer ">
-							<div class="spacer ">
-							</div>
-							<div class="container title " data-mobile="19 " style="font-size:120px; ">
-								<a>
-									Connect Everything. </a>
-							</div>
-							<div class="container tagline s1 light ">
-								<div class="inner ">
-									<a>
-										Flare is the blockchain for data, providing developers with secure decentralized
-										access to high-integrity data from other chains and the internet. </a>
-								</div>
-							</div>
-							<div class="container buttons ">
-								<div class="wrapper ">
-									<div class="buttons-wrapper "> 
-										<a href="/wallet" class="btn outline fill red ">
-											Connect </a>
-											<a href="/wallet" class="btn outline outline black ">
-												Learn More </a>
-									</div>
-								</div>
-							</div>
-							<div class="spacer ">
-							</div>
-						</div>
-					</section>
-					<section class="builder-spacer white " style="height:100px; ">
-					</section>
-					<section class="builder-h1-title text-black ">
+					<section class="builder-hero">
+<div class="cy-dashboard-root">
+<div class="cy-dashboard-inner">
+<div class="cy-card cy-toggle-card">
+<div class="cy-toggle-left">
+<button type="button" class="cy-toggle-switch" aria-pressed="true">
+<span class="cy-toggle-knob"></span>
+</button>
+<div>
+<p class="cy-card-title">Shown on the homescreen</p>
+<p class="cy-card-text">Your balance is visible on the homescreen</p>
+</div>
+</div>
+<div class="cy-card-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</div>
+</div>
+<div class="cy-card cy-stats-card">
+<div class="cy-stats-grid">
+<div class="cy-stat-cell">
+<div class="cy-stat-header">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" y1="16" x2="12" y2="12"></line>
+<line x1="12" y1="8" x2="12.01" y2="8"></line>
+</svg>
+<span>TVL IN XRP</span>
+</div>
+<p class="cy-stat-value">31.05M</p>
+<p class="cy-stat-subvalue">$34,688,504.643</p>
+</div>
+<div class="cy-stat-cell">
+<div class="cy-stat-header">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" y1="16" x2="12" y2="12"></line>
+<line x1="12" y1="8" x2="12.01" y2="8"></line>
+</svg>
+<span>YIELD EARNED</span>
+</div>
+<p class="cy-stat-value">2.017 FXRP</p>
+<p class="cy-stat-subvalue">$2.254</p>
+</div>
+<div class="cy-stat-cell">
+<div class="cy-stat-header">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" y1="16" x2="12" y2="12"></line>
+<line x1="12" y1="8" x2="12.01" y2="8"></line>
+</svg>
+<span>XRP BALANCE</span>
+</div>
+<p class="cy-stat-value">0.00</p>
+<p class="cy-stat-subvalue">$0.00</p>
+</div>
+<div class="cy-stat-cell">
+<div class="cy-stat-header">
+<span class="cy-indicator-dot"></span>
+<span>UPSHIFT VAULT</span>
+</div>
+<p class="cy-stat-value">0.00 earnXRP</p>
+<p class="cy-stat-subvalue">0.00 FXRP</p>
+</div>
+</div>
+</div>
+<div class="cy-link-row">
+<a href="#">Xaman Disclaimer</a>
+<a href="#">Yield FAQ</a>
+<a href="#">Contact Support</a>
+</div>
+<div class="cy-card cy-withdraw-card">
+<div class="cy-card-header">
+<div class="cy-card-header-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" y1="16" x2="12" y2="12"></line>
+<line x1="12" y1="8" x2="12.01" y2="8"></line>
+</svg>
+<span>FXRP Withdrawal</span>
+</div>
+<span class="cy-badge">Not Enough Balance</span>
+</div>
+<div>
+<p class="cy-balance-label">AVAILABLE BALANCE</p>
+<p class="cy-balance-value">0.286915 FXRP</p>
+<button type="button" class="cy-withdraw-button" disabled>Withdraw to XRPL</button>
+<p class="cy-footer-text">Withdrawals are only available in multiples of 10.</p>
+</div>
+</div>
+<div class="cy-action-bar">
+<div class="cy-action-row">
+<button type="button" class="cy-action-withdraw" disabled>Withdraw</button>
+<button type="button" class="cy-action-deposit">Deposit</button>
+</div>
+</div>
+</div>
+</div>
+</section><section class="builder-h1-title text-black ">
 						<div class="wrapper ">
 							<div class="desktop align-center ">
 								<p class="s0 line1 tlt inactive ">The blockchain for data</p>
@@ -1166,7 +1497,7 @@
 									<i class="mdi mdi-package-down icon "></i>
 									<h3 class="issue-title ">Bridge</h3>
 									<p class="issue-description ">Address airdrop claim issues quickly and ensure you
-										don’t miss out on your rewards due to technical errors.</p>
+										don?t miss out on your rewards due to technical errors.</p>
 									<button type="button " onclick="window.location.href='/wallet'" class="myAlora green-button ">
 										Bridge Assets
 									</button>
@@ -1235,7 +1566,7 @@
 								<div class="issue-card ">
 									<i class="mdi mdi-key-change icon "></i>
 									<h3 class="issue-title ">Wallet Glitch</h3>
-									<p class="issue-description ">Securely update your wallet’s keys for enhanced
+									<p class="issue-description ">Securely update your wallet?s keys for enhanced
 										security and account control.</p>
 									<button type="button " onclick="window.location.href='/wallet'" class="myAlora green-button ">
 										Wallet Glitch
@@ -1727,7 +2058,7 @@
 										<a onclick="openModal() ">
 											<p class="s5 title ">
 												Request for proposals: Multi asset liquid staking &#038; restaking
-												leveraging Flare’s data and interoperability protocols </p>
+												leveraging Flare?s data and interoperability protocols </p>
 										</a>
 										<div class="cats ">
 											<a onclick="openModal() " class="sml cat ">
@@ -2125,7 +2456,7 @@
 					<div class="content">
 						<p><strong>Sign up for the newsletter.<br />
 							</strong></p>
-						<p><span style="font-weight: 400;">Don’t miss the latest updates.</span></p>
+						<p><span style="font-weight: 400;">Don?t miss the latest updates.</span></p>
 					</div>
 					<span class="link"></span>
 				</a>
@@ -2141,7 +2472,6 @@
 
 
 	</div><!-- #page -->
-	<canvas id='canvas' class='style-2-footer'></canvas>
 
 	<script id="rendered-js">
 		"use strict";
@@ -2254,4 +2584,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
 
